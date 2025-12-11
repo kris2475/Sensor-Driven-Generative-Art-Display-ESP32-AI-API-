@@ -21,8 +21,8 @@ const char* START_COMMAND = "START_IMAGE_TRANSFER";
 // --------------------------------------------------------
 // --- WIFI Configuration (Confirmed Working) ---
 // --------------------------------------------------------
-const char* ssid = "SKYYRMR7"; 
-const char* password = "K2xWvDFZkuCh"; 
+const char* ssid = ""; 
+const char* password = ""; 
 
 // --------------------------------------------------------
 // --- HTTP Test Configuration (NEW RELIABLE URL) ---
