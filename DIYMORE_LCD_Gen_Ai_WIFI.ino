@@ -14,8 +14,8 @@
 // --------------------------------------------------------
 // --- WIFI & NETWORK CONFIGURATION ---
 // --------------------------------------------------------
-const char* ssid = "SKYYRMR7"; 
-const char* password = "K2xWvDFZkuCh"; 
+const char* ssid = ""; 
+const char* password = ""; 
 
 // Ports for dual server operation on the ESP32
 const int image_transfer_port = 8080;   // ESP32 SERVER: receives image
