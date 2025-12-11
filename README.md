@@ -68,11 +68,7 @@ A minimal, conflict-free configuration tailored to the 170x320 ST7789 display.
 | MISO Disable   | `#define TFT_MISO -1`                    | Write-only display                            |
 | Pin Assignments| `#define TFT_CS 15`<br>`#define TFT_DC 2`<br>`#define TFT_RST 4`<br>`#define TFT_BL 32` | ESP32 wiring |
 
-#### C. Activating the Custom Setup
-```cpp
-// In User_Setup_Select.h
-// ... ensure all other includes are commented out
-#include <User_Setups/Setup101_ST7789_170x320.h>
+
 
 
 ## 7. Code Implementation Details
@@ -95,5 +91,11 @@ The Python client orchestrates the following workflow:
 - **Prompt Generation:** Converts the sensor reading into a natural-language prompt  
 - **AI Generation:** Invokes Stability AI to generate a JPEG image  
 - **Conversion:** Converts the JPEG image into RGB565 raw format  
-- **Push Image (8080):** Streams the RGB565 data to the ESP32 for immediate display  
+- **Push Image (8080):** Streams the RGB565 data to the ESP32 for immediate display
+
+#### C. Activating the Custom Setup
+```cpp
+// In User_Setup_Select.h
+// ... ensure all other includes are commented out
+#include <User_Setups/Setup101_ST7789_170x320.h>
 
