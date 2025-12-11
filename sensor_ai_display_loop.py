@@ -8,7 +8,7 @@ import requests
 import base64
 
 # --- API Configuration ---
-STABILITY_API_KEY = "sk-kdeBvH0q4bae23YA1LpSnSVrFJIypg1pZlJLEK7MoEdaOsnl" 
+STABILITY_API_KEY = "" 
 STABILITY_API_URL = "https://api.stability.ai/v2beta/stable-image/generate/core"
 STABILITY_MODEL = "stable-diffusion-xl" 
 
@@ -188,4 +188,5 @@ if __name__ == "__main__":
             print("Failed to retrieve sensor data. Skipping image generation.")
             
         print(f"Waiting {POLLING_INTERVAL} seconds...")
+
         time.sleep(POLLING_INTERVAL)
