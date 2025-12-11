@@ -74,3 +74,26 @@ A minimal, conflict-free configuration tailored to the 170x320 ST7789 display.
 // ... ensure all other includes are commented out
 #include <User_Setups/Setup101_ST7789_170x320.h>
 
+
+## 7. Code Implementation Details
+
+### A. ESP32 Sketch (DIYMORE_LCD_Gen_Ai_WIFI.ino)
+
+The ESP32 operates as two independent TCP servers:
+
+| Server               | Port | Function                                   |
+|----------------------|------|---------------------------------------------|
+| sensorRequestServer  | 8082 | Reads temperature and returns raw string    |
+| imageServer          | 8080 | Receives and displays raw RGB565 image data |
+
+### B. Python Script (firewall_bypass_loop.py)
+
+The Python client orchestrates the following workflow:
+
+- **Polling Loop:** Runs every 30 seconds  
+- **Pull Data (8082):** Retrieves sensor value from ESP32  
+- **Prompt Generation:** Converts the sensor reading into a natural-language prompt  
+- **AI Generation:** Invokes Stability AI to generate a JPEG image  
+- **Conversion:** Converts the JPEG image into RGB565 raw format  
+- **Push Image (8080):** Streams the RGB565 data to the ESP32 for immediate display  
+
